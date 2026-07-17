@@ -1,11 +1,11 @@
 [phases.setup]
-nixPkgs = ["python311", "libGL", "glib", "libxcb"]
+nixPkgs = ["python311", "libGL", "glib", "xorg.libxcb"]
 
 [phases.install]
 cmds = [
     "pip install setuptools==69.5.1",
     "pip install ultralytics>=8.4.0 deep-sort-realtime>=1.3.2 opencv-python-headless>=4.8.0 numpy fastapi>=0.100.0 python-multipart uvicorn",
-    "pip install --force-reinstall opencv-python-headless>=4.8.0 --no-deps"
+    "pip install --force-reinstall 'opencv-python-headless>=4.8.0' --no-deps"
 ]
 
 [start]
