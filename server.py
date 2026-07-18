@@ -10,7 +10,7 @@ from deep_sort_realtime.deepsort_tracker import DeepSort
 app = FastAPI()
 
 # Load model once at startup
-model = YOLO("yolov8s.pt")
+model = YOLO("yolov8n.pt")
 
 @app.get("/", response_class=HTMLResponse)
 async def index():
