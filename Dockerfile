@@ -15,4 +15,4 @@ RUN pip install --no-cache-dir --force-reinstall opencv-python-headless --no-dep
 
 COPY server.py .
 
-CMD ["sh", "-c", "uvicorn server:app --host 0.0.0.0 --port ${PORT:-8080}"]
+CMD ["sh", "-c", "uvicorn server:app --host 0.0.0.0 --port ${PORT:-8080} --h11-max-incomplete-event-size 104857600"]
