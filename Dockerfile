@@ -15,4 +15,4 @@ RUN pip install --no-cache-dir --force-reinstall opencv-python-headless --no-dep
 
 COPY server.py .
 
-CMD ["sh", "-c", "uvicorn server:app --host 0.0.0.0 --port ${PORT:-8080} --h11-max-incomplete-event-size 104857600"]
+CMD ["sh", "-c", "pip install gunicorn && gunicorn server:app -w 1 -k uvicorn.workers.UvicornWorker --bind 0.0.0.0:${PORT:-8080} --limit-request-line 0 --limit-request-field_size 0"]
